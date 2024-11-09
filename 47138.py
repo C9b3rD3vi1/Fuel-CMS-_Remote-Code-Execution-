@@ -31,4 +31,4 @@ while 1:
 	begin = r.text[0:20]
 	dup = find_nth_overlapping(r.text,begin,2)
 
-	print r.text[0:dup]
+	print(r.text[0:dup])
