@@ -17,24 +17,45 @@ import sys
 from colorama import Fore, Style
 
 def get_arguments():
-	parser = argparse.ArgumentParser(description='fuel cms fuel CMS 1.4.1 - Remote Code Execution Exploit',usage=f'python3 {sys.argv[0]} -u <url>',epilog=f'EXAMPLE - python3 {sys.argv[0]} -u http://10.10.21.74')
+    """
+    This function parses the command line arguments for the fuel CMS 1.4.1 - Remote Code Execution Exploit.
 
-	parser.add_argument('-v','--version',action='version',version='1.2',help='show the version of exploit')
+    Parameters:
+        None
 
-	parser.add_argument('-u','--url',metavar='url',dest='url',help='Enter the url')
+    Returns:
+        args (argparse.Namespace): A Namespace object containing the parsed command line arguments.
 
-	args = parser.parse_args()
+    Usage:
+        The function can be used to parse the command line arguments for the exploit. It takes no parameters and returns an argparse.Namespace object containing the parsed arguments.
 
-	if len(sys.argv) <=2:
-		parser.print_usage()
-		sys.exit()
-	
-	return args
+    Example:
+        >>> args = get_arguments()
+        >>> print(args.url)  # Prints the parsed URL
+    """
+    parser = argparse.ArgumentParser(description='fuel cms fuel CMS 1.4.1 - Remote Code Execution Exploit',
+                                     usage=f'python3 {sys.argv[0]} -u <url>',
+                                     epilog=f'EXAMPLE - python3 {sys.argv[0]} -u http://10.10.21.74')
+
+    parser.add_argument('-v', '--version', action='version', version='1.2',
+                        help='show the version of exploit')
+
+    parser.add_argument('-u', '--url', metavar='url', dest='url',
+                        help='Enter the url')
+
+    args = parser.parse_args()
+
+    if len(sys.argv) <= 2:
+        parser.print_usage()
+        sys.exit()
+
+    return args
 
 
 args = get_arguments()
 url = args.url 
 
+# chec validation of arguments url
 if "http" not in url:
 	sys.stderr.write("Enter vaild url")
 	sys.exit()
