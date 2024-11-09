@@ -1,5 +1,6 @@
 # Exploit Title: Fuel CMS 1.4.1 - Remote Code Execution (3)
-# Exploit Author: Padsala Trushal
+
+# Exploit Author: C9b3rD3vi1
 # Date: 2021-11-03
 # Vendor Homepage: https://www.getfuelcms.com/
 # Software Link: https://github.com/daylightstudio/FUEL-CMS/releases/tag/1.4.1
